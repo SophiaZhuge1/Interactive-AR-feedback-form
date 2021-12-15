@@ -1,5 +1,18 @@
-# AR-Test
+# AR Feedback Experience
 Testing out the AR.js framework
+
+# Checklist
+- [x] Create 2d assets (basketball, basket, stars)
+- [x] Ball falling into basket animation
+- [ ] Standard feedback form
+  - [x] HTML page form
+  - [ ] Button giving you option to use AR form
+- [ ] AR feedback form - Basketball game
+  - [ ] Question appears at top of screens
+  - [ ] Answers appear on screen with corresponding baskets
+  - [x] User selects basket by rotating/moving phone
+  - [x] Ball falls into selected basketball
+- [ ] Presentation
 
 # Run scripts
 1. Install Live Server extension in VSCode
