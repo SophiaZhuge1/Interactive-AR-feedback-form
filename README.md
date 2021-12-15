@@ -1,7 +1,9 @@
 # AR Feedback Experience
-Testing out the AR.js framework
 
 # Checklist
+
+Testing out the AR.js framework
+
 - [x] Create 2d assets (basketball, basket, stars)
 - [x] Ball falling into basket animation
 - [ ] Standard feedback form
@@ -14,7 +16,17 @@ Testing out the AR.js framework
   - [x] Ball falls into selected basketball
 - [ ] Presentation
 
+# Run
+
+From root directory:
+`npm run start`
+
+# Configure
+
+Edit `.env` values in root directory.
+
 # Run scripts
+
 1. Install Live Server extension in VSCode
 2. Open .html file with Live Server
 3. Allow browser access to camera
