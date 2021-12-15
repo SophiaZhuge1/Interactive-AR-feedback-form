@@ -1,0 +1,21 @@
+{
+  "name": "lloyds-hackathon",
+  "version": "1.0.0",
+  "description": "Monorepo",
+  "main": "",
+  "scripts": {
+    "run:backend": "cd backend/ && npm run start",
+    "run:qr-code": "cd qr-code/ && npm run start",
+    "start": "concurrently  \"npm run run:backend\" \"npm run run:qr-code\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://pscode.lioncloud.net/sirzhuge/lloyds-hackathon.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^6.4.0"
+  }
+}
