@@ -1,0 +1,8 @@
+#lau-qr-code svg {
+  display: block;
+  border: 5px solid green;
+  height: auto;
+  width: 50%;
+  min-width: 200px;
+  max-width: 500px;
+}

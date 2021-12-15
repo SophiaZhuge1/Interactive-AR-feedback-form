@@ -1,0 +1,2 @@
+- Change `QR_CODE_URL` in `src/App.jsx`
+- Run with `npm run start`
