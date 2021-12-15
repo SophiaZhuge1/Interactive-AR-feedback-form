@@ -3,7 +3,10 @@ import QRCode from './components/QRCode';
 import './App.css';
 
 const App = () => {
-  const QR_CODE_URL = 'youtube.com';
+  const QR_CODE_URL =
+    import.meta.env.SNOWPACK_PUBLIC_QR_CODE_URL ||
+    'https://www.lloydsbank.com/contact-us/great-experience.html';
+
   return (
     <div className="lau-container">
       <h1>Give feedback!</h1>

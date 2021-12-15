@@ -1,6 +1,9 @@
+const path = require('path');
+require('dotenv').config({ path: path.resolve(process.cwd(), '..', '.env') });
 const express = require('express');
 const app = express();
-const port = 3000;
+
+const port = process.env.FORM_PORT || 3001;
 
 app.use(express.json());
 
@@ -8,7 +11,7 @@ app.use(express.json());
 app.post('/form', function (request, response) {
   const { body } = request;
   console.log(body);
-  // Store data in no-SQL db
+  // Store data in no-SQL db...
 });
 
 app.listen(port, () => {
