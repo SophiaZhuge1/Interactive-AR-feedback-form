@@ -6,7 +6,8 @@
   "scripts": {
     "run:backend": "cd backend/ && npm run start",
     "run:qr-code": "cd qr-code/ && npm run start",
-    "start": "concurrently  \"npm run run:backend\" \"npm run run:qr-code\""
+    "run:form-app": "cd form-app/ && npm run start",
+    "start": "concurrently  \"npm run run:backend\" \"npm run run:qr-code\" \"npm run run:form-app\""
   },
   "repository": {
     "type": "git",

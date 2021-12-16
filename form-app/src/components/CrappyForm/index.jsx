@@ -11,6 +11,7 @@ const CrappyForm = ({ question, answerComp }) => {
   const submitHandler = () => {
     setQuestionNum((n) => n + 1);
     console.log('Submit with', question, answer);
+    // TODO: Send POST data to form.
     navigate(`/form/${questionNum + 1}`);
   };
 
