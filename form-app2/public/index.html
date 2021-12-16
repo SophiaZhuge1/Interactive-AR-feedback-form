@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive AR feedback</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/531c037e5b.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+    <div id="lau-form"></div>
+
+    <script>
+      var stars = document.getElementsByClassName('fas');
+      var emoji = document.getElementsByClassName('emoji');
+
+      stars[0].onclick = function () {
+        stars[0].style.color = '#ffd93b';
+        stars[1].style.color = '#e4e4e4';
+        stars[2].style.color = '#e4e4e4';
+        stars[3].style.color = '#e4e4e4';
+        stars[4].style.color = '#e4e4e4';
+      };
+      stars[1].onclick = function () {
+        stars[0].style.color = '#ffd93b';
+        stars[1].style.color = '#ffd93b';
+        stars[2].style.color = '#e4e4e4';
+        stars[3].style.color = '#e4e4e4';
+        stars[4].style.color = '#e4e4e4';
+      };
+      stars[2].onclick = function () {
+        stars[0].style.color = '#ffd93b';
+        stars[1].style.color = '#ffd93b';
+        stars[2].style.color = '#ffd93b';
+        stars[3].style.color = '#e4e4e4';
+        stars[4].style.color = '#e4e4e4';
+      };
+      stars[3].onclick = function () {
+        stars[0].style.color = '#ffd93b';
+        stars[1].style.color = '#ffd93b';
+        stars[2].style.color = '#ffd93b';
+        stars[3].style.color = '#ffd93b';
+        stars[4].style.color = '#e4e4e4';
+      };
+      stars[4].onclick = function () {
+        stars[0].style.color = '#ffd93b';
+        stars[1].style.color = '#ffd93b';
+        stars[2].style.color = '#ffd93b';
+        stars[3].style.color = '#ffd93b';
+        stars[4].style.color = '#ffd93b';
+      };
+    </script>
+
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script type="module" src="/dist/index.js"></script>
+  </body>
+</html>
