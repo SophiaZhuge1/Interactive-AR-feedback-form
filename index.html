@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Hackathon demo</title>
+    <script src='https://aframe.io/releases/0.9.2/aframe.min.js'></script>
+    <script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
+    <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script>
+        THREEx.ArToolkitContext.baseURL = 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/'
+    </script>
+    <script src="./component.js"></script>
+    <link rel="stylesheet" type="text/css" href="./style.css"/>
+</head>
+<script>
+    AFRAME.registerComponent("trackball", {
+        tick: function() {
+            let pos = this.el.getAttribute("position");
+            document.body.addEventListener('click',()=>{
+              if (pos.y < 0.5) {
+                  // reset position
+                  this.el.setAttribute("position", "0.1 2.36 -1.5")
+                  // sync
+                  this.el.components["dynamic-body"].syncToPhysics();
+              }
+            }, true); 
+            
+        }
+        });
+</script>
+<body style='margin: 0; overflow: hidden;'>
+    <a-scene 
+        anotherone
+        vr-mode-ui='enabled: false' 
+        embedded
+        arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
+        <a-entity id="hoop1" rotation="90 0 0" position="0 2 -1.8"> 
+            <a-torus scale="0.6 0.6 0.6" position="0 0.173 -0.1" color="#43A367" radius="0.25" radius-tubular="0.005"></a-torus>
+            <a-torus scale="0.6 0.6 0.6" static-body="shape: mesh;" position="0 0.173 -0.1" visible="false" radius="0.27" radius-tubular="0.02" material="" geometry="radius: 0.29; segmentsRadial: 5; segmentsTubular: 12"></a-torus>
+            <a-plane
+                id = "middle"
+                scale="0.6 0.6 0.6"
+                position="0 0 -0.3"
+                rotation="-90 0 0"
+                width="0.9"
+                height="0.9"
+                material="transparent: true; side: double;"
+                src="./ar/hoop.png"
+                cursor-listener
+                static-body>
+                <a-entity
+                id="question"
+                geometry="primitive: plane; width: 4; height: auto"
+                material="color: black"
+                text="value: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"
+                position = "0 1 0"></a-entity>
+                <a-entity
+                id="answer-2"
+                scale="4 4 2"
+                material="color: black"
+                text="value: Answer 2"
+                position = "1.6 -1 0"></a-entity>
+            </a-plane>
+            <a-torus scale="0.6 0.6 0.6" position="1 0 -0.1" color="#43A367" radius="0.25" radius-tubular="0.005"></a-torus>
+            <a-torus scale="0.6 0.6 0.6" static-body="shape: mesh;" position="1 0 -0.1" visible="false" radius="0.27" radius-tubular="0.02" material="" geometry="radius: 0.29; segmentsRadial: 5; segmentsTubular: 12"></a-torus>
+            <a-plane
+                id = "right"
+                scale="0.6 0.6 0.6"
+                position="1.1 0 -0.23"
+                rotation="-90 0 0"
+                width="0.9"
+                height="0.9"
+                material="transparent: true; side: double;"
+                src="./ar/righthoop.png"
+                cursor-listener
+                static-body
+            >
+            <a-entity
+                id="answer-3"
+                scale="4 4 2"
+                material="color: black"
+                text="value: Answer 3"
+                position = "1.6 -1 0"></a-entity>
+            </a-plane>
+            <a-torus scale="0.6 0.6 0.6" position="-1 0 -0.1" color="#43A367" radius="0.25" radius-tubular="0.005"></a-torus>
+            <a-torus scale="0.6 0.6 0.6" static-body="shape: mesh;" position="-1 0 -0.1" visible="false" radius="0.27" radius-tubular="0.02" material="" geometry="radius: 0.29; segmentsRadial: 5; segmentsTubular: 12"></a-torus>
+            <a-plane
+                id = "left"
+                scale="0.6 0.6 0.6"
+                position="-1.2 0 -0.23"
+                rotation="-90 0 0"
+                width="0.9"
+                height="0.9"
+                material="transparent: true; side: double;"
+                src="./ar/lefthoop.png"
+                static-body
+                cursor-listener
+            >
+            <a-entity
+                id="answer-1"
+                scale="4 4 2"
+                material="color: black"
+                text="value: Answer 1"
+                position = "1.6 -1 0"></a-entity>
+            </a-plane>    
+        </a-entity>
+    <a-camera gps-camera rotation-reader>
+        <a-cursor></a-cursor>
+    </a-camera>
+</a-scene>
+<script>
+
+function ball_in_hoop(param) {
+        console.log(param)
+        var position = "0";
+        if(param == "middle"){ position= "0.1 2.36 -1.5";}
+        if(param == "left"){ position= "-0.9 2.36 -1.7";}
+        if(param == "right"){ position= "0.9 2.36 -1.7";}
+
+
+        var ball = document.createElement("a-sphere");
+        ball.setAttribute("id","ballc")
+        ball.setAttribute("radius", "0.1");
+        ball.setAttribute("position", position);
+        ball.setAttribute("dynamic-body", "");
+        ball.setAttribute("color", "orange");
+        document.querySelector('a-scene').appendChild(ball); 
+}
+
+// document.body.addEventListener('click', ball_in_hoop, true); 
+
+</script>
+
+</body>
