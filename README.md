@@ -1,31 +1,19 @@
-# AR Feedback Experience
+# Augmented Reality Feedback Experience
+### Gamifying the feedback collecting process for businesses usiing AR technology. 
+Collecting feedback is crucial because listening to what society really need could drive the the direction of any customer centric businesses in the future. 
+However, current feedback system is very ineffective, since filling out the feedback form is a tedious process and doesn’t add any value to the customer, most people click through the answers as fast as possible without even look at the question, which just generated a large amount of unnecessary and inaccurate data. 
+Now we are proposing a brand new feedback system by using AR to gamify the process so that customers are entertained while providing valuable feedback. 
 
-# Checklist
+![MicrosoftTeams-image (3)](https://user-images.githubusercontent.com/86914509/146389691-ed460f79-4b3d-4c19-9369-c974d7973664.png)
 
-Testing out the AR.js framework
+# Run app
 
-- [x] Create 2d assets (basketball, basket, stars)
-- [x] Ball falling into basket animation
-- [ ] Standard feedback form
-  - [x] HTML page form
-  - [ ] Button giving you option to use AR form
-- [ ] AR feedback form - Basketball game
-  - [ ] Question appears at top of screens
-  - [ ] Answers appear on screen with corresponding baskets
-  - [x] User selects basket by rotating/moving phone
-  - [x] Ball falls into selected basketball
-- [ ] Presentation
-
-# Run
-
-From root directory:
+cd to the form-app directory:
+run:
+`npm install`
 `npm run start`
 
-# Configure
-
-Edit `.env` values in root directory.
-
-# Run scripts
+# Run other AR scripts
 
 1. Install Live Server extension in VSCode
 2. Open .html file with Live Server
