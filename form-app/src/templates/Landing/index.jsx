@@ -3,6 +3,9 @@ import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
 import './styles.css';
 
+// TODO: dotenv not working
+const AR_APP_URL = '';
+
 const Landing = () => {
   const navigate = useNavigate();
 
@@ -15,7 +18,7 @@ const Landing = () => {
           type="link"
           variant="primary"
           size="lg"
-          onClick={() => navigate('/form')}
+          onClick={() => navigate('/form/1')}
         >
           Launch
         </Button>
@@ -24,7 +27,7 @@ const Landing = () => {
           type="link"
           variant="outline-primary"
           size="lg"
-          onClick={() => (window.location.href = 'https://www.google.co.uk')}
+          onClick={() => (window.location.href = AR_APP_URL)}
         >
           Try with AR
         </Button>
