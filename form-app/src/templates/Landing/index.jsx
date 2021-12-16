@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import './styles.css';
 
 // TODO: dotenv not working
-const AR_APP_URL = '';
+const AR_APP_URL = 'https://bluem0ld.github.io/';
 
 const Landing = () => {
   const navigate = useNavigate();
